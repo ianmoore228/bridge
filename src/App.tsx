@@ -1,12 +1,13 @@
-import './App.css'
+import { LandingPage } from './pages/LandingPage'
+
 
 function App() {
 
   return (
-    <div>
-      Мосты
-    </div>
-  )
+      <div>
+        <LandingPage />
+      </div>
+  );
 }
 
-export default App
+export default App;

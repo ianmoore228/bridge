@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-UltraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-ExtraBold.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: #FF0000;
+  --black: #000000;
+  --white: #FFFFFF;
+  --logo-gradient: linear-gradient(180deg, rgba(255, 0, 0, 1) 0%, rgb(255, 0, 149) 100%);
+  --wrapper-padding: 0 100px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #1b1f1f;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4e5858;
+  border-radius: 10px;
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--black);
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+h1, h2, h3 {
+  font-family: Gilroy;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+p,
+label {
+  font-size: 1em;
+}
+
+a {
+  font-size: 1em;
+}
+
+.logo-bridges {
+  font-weight: 900; 
+  background: var(--logo-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+@media screen and (max-width: 650px) {
+
+  :root {
+    --wrapper-padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  p,
+  label {
+    font-size: 0.875em;
+  }
+
+  a {
+    font-size: 0.875em;
+  }
+}
