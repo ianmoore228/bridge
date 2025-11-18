@@ -1,0 +1,124 @@
+.SectionFourth {
+    padding-bottom: 350px;
+}
+
+.title {
+    max-width: 727px;
+    text-align: right;
+    align-self: end;
+    margin: 187px 0 193px 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: var(--wrapper-padding);
+}
+
+.listWrapper {
+    position: relative;
+}
+
+.listContainer {
+    background-color: #0c0c0c8a;
+    height: 345px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(100px);
+    border-radius: 35px;
+    padding: 54px 54px 54px 80px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.listContainer:nth-child(3) {
+    flex-direction: row-reverse;
+    margin-top: 14px;
+    padding: 54px;
+    text-align: right;
+}
+
+.listContent {
+    max-width: 628px;
+}
+
+.listImage {
+    border-radius: 35px;
+}
+
+.listTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 22px;
+
+}
+
+.listItem:not(:last-child) {
+    margin-bottom: 11px;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.listItem {
+    position: relative;
+    padding-left: 40px;
+}
+
+.listContainer:nth-child(2) .listItem::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 21px;
+    height: 21px;
+    background-image: url('../../assets/images/SectionFourth/star.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.listContainer:nth-child(3) .listItem {
+    padding-left: 0;
+    padding-right: 40px;
+}
+
+.listContainer:nth-child(3) .listItem::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 21px;
+    height: 21px;
+    background-image: url('../../assets/images/SectionFourth/star.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sphere {
+    position: absolute;
+    z-index: 1;
+}
+
+.sphereFirst {
+    top: -100%
+}
+
+.sphereSecond {
+    right: -2%;
+    bottom: 80%;
+}
+
+.sphereThird {
+    left: -6%;
+    bottom: 34%;
+}
+
+.sphereFourth {
+    right: -2%;
+    bottom: -14%;
+    z-index: 3;
+}

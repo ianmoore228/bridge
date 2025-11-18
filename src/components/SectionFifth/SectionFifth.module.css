@@ -1,0 +1,55 @@
+.sectionFifth {
+    background-color: var(--white);
+    color: rgb(51, 51, 51);
+    border-radius: 35px 35px 35px 300px;
+    padding-top: 144px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: var(--wrapper-padding); 
+    align-items: center;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.title {
+    max-width: 1053px;
+    padding-bottom: 120px;
+    align-self: start;
+}
+
+.cardTitle {
+    font-size: 20px;
+    margin: 16px 0 11px 0;
+}
+
+.cardText {
+    font-weight: 300;
+}
+
+.wrapperCards {
+    display: flex;
+    padding-bottom: 100px;
+    flex-wrap: wrap;
+    max-width: 1250px;
+    justify-content: center;
+}
+
+.card {
+    max-width: 365px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 20px;
+} 
+
+.bridge {
+    background-image: url('../../assets/images/SectionFifth/bridge.png');
+    height: 250px;
+}

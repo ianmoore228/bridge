@@ -65,7 +65,7 @@
   --black: #000000;
   --white: #FFFFFF;
   --logo-gradient: linear-gradient(180deg, rgba(255, 0, 0, 1) 0%, rgb(255, 0, 149) 100%);
-  --wrapper-padding: 0 100px;
+  --wrapper-padding: 0 150px;
 }
 
 ::-webkit-scrollbar {
@@ -95,14 +95,15 @@ body {
   color: var(--white);
   background-color: var(--black);
   scroll-behavior: smooth;
+  cursor: default;
+}
+
+img {
+  user-select: none;
 }
 
 a {
   text-decoration: none;
-}
-
-li {
-  list-style: none;
 }
 
 button {

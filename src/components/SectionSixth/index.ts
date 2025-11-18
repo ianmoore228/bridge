@@ -1,0 +1,1 @@
+export { SectionSixth } from "./SectionSixth";

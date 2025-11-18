@@ -6,18 +6,28 @@ import blackbg from "images/Hero/black-bg.png";
 export const Hero = () => {
   return (
     <section className={styles.hero}>
-      <img className={styles.glowImg} src={glow} alt="glow"/>
+      <img draggable={false} className={styles.glowImg} src={glow} alt="glow" />
       <div className={styles.wrapper}>
-      <h1 className={styles.title}>
-        Единая цифровая платформа «<span className={`${styles.logo} logo-bridges`}>МОСТЫ</span>»
-        для управления жилыми комплексами
-      </h1>
+        <h1 className={styles.title}>
+          Единая цифровая платформа «
+          <span className={`${styles.logo} logo-bridges`}>МОСТЫ</span>» для
+          управления жилыми комплексами
+        </h1>
 
-      <div className={styles.iphoneContainer}>
-        <img className={styles.iphoneImg} src={iphone} alt="iphone"></img>
-        <h1 className={styles.name}>МОСТЫ</h1>
-        <img className={styles.backgroundImg} src={blackbg}/>
-      </div>
+        <div className={styles.iphoneContainer}>
+          <img
+            draggable={false}
+            className={styles.iphoneImg}
+            src={iphone}
+            alt="iphone"
+          ></img>
+          <h1 className={styles.name}>МОСТЫ</h1>
+          <img
+            draggable={false}
+            className={styles.backgroundImg}
+            src={blackbg}
+          />
+        </div>
       </div>
     </section>
   );

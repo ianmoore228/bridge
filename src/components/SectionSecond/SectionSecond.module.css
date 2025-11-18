@@ -1,0 +1,56 @@
+.sectionSecond {
+    padding-top: 190px;
+    padding-bottom: 170px;
+}
+
+.wrapper {
+    padding : var(--wrapper-padding);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: right;
+    margin-bottom: 115px;
+}
+
+.containerCards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contentCard {
+    position: relative;
+    width: 406px;
+
+}
+
+.imgCard {
+    position: absolute;
+    bottom: 3px;
+}
+
+.bgCard {
+    border-radius: 30px;
+    outline: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+
+.textCard {
+    position: absolute;
+    left: 26px;
+    top: 35px;
+    width: 340px;
+}
+
+.homescreenImg {
+    right: 0;
+}
+
+.graphImg {
+    border-radius: 0 0 26px 26px;
+}
+
+.settingsImg {
+    border-radius: 0 0 0 26px;
+}

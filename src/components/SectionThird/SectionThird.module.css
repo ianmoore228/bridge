@@ -1,0 +1,76 @@
+.sectionThird {
+    background-color: var(--white);
+    color: black;
+    border-radius: 35px 35px 35px 300px;
+    padding: var(--wrapper-padding);
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper {
+    padding: 148px 0 187px 0;
+    display: flex;
+}
+
+.title {
+    max-width: 740px;
+}
+
+.containerLeft {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding-top: 111px;
+}
+
+.containerRight {
+    flex: 1;
+}
+
+.listsWrapper {
+    display: flex;
+    padding-top: 117px;
+    flex-direction: column;
+    max-width: 830px;
+
+}
+
+.listsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listContent {
+    max-width: 370px
+}
+
+.listItem:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+.listTitle {
+    font-size: 20px;
+    margin-bottom: 11px;
+    margin-top: 4px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.iphoneImg {
+    right: -150px;
+    position: absolute;
+}
+
+.listAd {
+    margin-top: 88px;
+}
+
+.listLoyalty {
+    margin-top: -33px;
+}
+
+.listManagement {
+    margin-top: 55px;
+}

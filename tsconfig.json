@@ -1,6 +1,9 @@
 {
   "files": [],
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "checkJs": false,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",

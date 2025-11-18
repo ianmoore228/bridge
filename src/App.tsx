@@ -4,9 +4,9 @@ import { LandingPage } from './pages/LandingPage'
 function App() {
 
   return (
-      <div>
+      <main>
         <LandingPage />
-      </div>
+      </main>
   );
 }
 
