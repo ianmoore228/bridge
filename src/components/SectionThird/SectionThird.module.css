@@ -30,9 +30,9 @@
 .listsWrapper {
     display: flex;
     padding-top: 117px;
-    flex-direction: column;
+    gap: 55px;
     max-width: 830px;
-
+    flex-wrap: wrap;
 }
 
 .listsContainer {
@@ -54,6 +54,14 @@
     margin-top: 4px;
 }
 
+.listTitle:nth-child(2) {
+    max-width: 360px;
+}
+
+.listContent:nth-child(2)>.list>.listItem:nth-child(1) {
+    max-width: 360px;
+}
+
 .list {
     list-style-type: none;
 }
@@ -68,9 +76,5 @@
 }
 
 .listLoyalty {
-    margin-top: -33px;
-}
-
-.listManagement {
-    margin-top: 55px;
+    margin-top: -100px;
 }

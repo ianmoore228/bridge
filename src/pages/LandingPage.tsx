@@ -5,6 +5,8 @@ import { SectionThird } from "@/components/SectionThird";
 import { SectionFourth } from "@/components/SectionFourth";
 import { SectionFifth } from "@/components/SectionFifth";
 import { SectionSixth } from "@/components/SectionSixth";
+import { SectionSeventh } from "@/components/SectionSeventh";
+import { Footer } from "@/components/Footer";
 
 export const LandingPage = () => {
   return (
@@ -13,9 +15,11 @@ export const LandingPage = () => {
       <SectionFirst />
       <SectionSecond />
       <SectionThird />
-      <SectionFourth/>
-      <SectionFifth/>
-      <SectionSixth/>
+      <SectionFourth />
+      <SectionFifth />
+      <SectionSixth />
+      <SectionSeventh />
+      <Footer />
     </>
   );
 };

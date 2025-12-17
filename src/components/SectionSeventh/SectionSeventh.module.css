@@ -1,0 +1,153 @@
+.section {
+    background-color: white;
+    margin-top: -11.5%;
+    color: black;
+    padding-top: 340px;
+    border-radius: 0px 0px 35px 300px;
+    position: relative;
+    z-index: -1;
+}
+
+.wrapper {
+    padding: var(--wrapper-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+}
+
+.containerTop, .containerBottom {
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerBottom {
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerTop .contentLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+}
+
+.containerTop .contentRight {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+
+}
+
+.containerBottom .contentLeft {
+    position: relative;
+}
+
+.containerBottom .contentRight {
+    margin-top: 200px;
+    margin-left: -90px;
+}
+
+.text {
+    max-width: 544px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.imageFirst {
+    max-width: 414px;
+}
+
+.imageSecond {
+    max-width: 284px;
+    margin-left: -190px;
+}
+
+.imageMap {
+    max-width: 375px;
+    margin: 200px 0 0 65px;
+}
+
+.titleText {
+    max-width: 320px;
+    font-size: 20px;
+}
+
+.banner {
+    max-width: 405px;
+    box-sizing: border-box;
+    padding: 24px 40px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.815);
+    top: 100px;
+    right: 80px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 22px 0px rgba(5, 0, 81, 0.25);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.list {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+
+}
+
+.listItem {
+    font-weight: 600;
+    color: white;
+    background-color: var(--red);
+    border-radius: 25px;
+    padding: 6px 13px;
+}
+
+.bannerTitle {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.gradient {
+    width: 100%;
+    height: 319px;
+    position: absolute;
+    background: linear-gradient(0deg,rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    bottom: 0;
+    z-index: 1;
+    border-radius: 0px 0px 35px 300px;
+}
+
+.blackLineFirst, .blackLineSecond, .blackLineThird, .blackLineFourth {
+    width: 66px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+}
+
+.blackLineFirst {
+    top: 500px;
+}
+
+.blackLineSecond {
+    top: 1400px;
+}
+
+.blackLineThird {
+    top: 500px;
+    right: 0;
+}
+
+.blackLineFourth {
+    top: 1400px;
+    right: 0;
+}
+
+.imgIphone {
+    position: relative;
+    bottom: -3px;
+}

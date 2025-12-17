@@ -1,5 +1,5 @@
 .wrapper {
-    padding: var(--wrapper-padding);
+    padding: 0 300px;
     display: flex;
 }
 
@@ -19,7 +19,7 @@
 
 .contentText {
     padding-top: 47px;
-    max-width: 630px;
+    max-width: 496px;
     display: flex;
     flex-direction: column;
     gap: 16px;

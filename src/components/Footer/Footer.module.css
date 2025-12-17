@@ -1,0 +1,25 @@
+.wrapper {
+    padding: var(--wrapper-padding);
+    margin-top: 227px;
+}
+
+.bridge {
+    background-image: url(/src/assets/images/Footer/bridge.png);
+    height: 250px;
+}
+
+.imgPeople {
+    max-width: 427px;
+    border-radius: 30px 30px 30px 174px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 140px;
+    align-items: center
+}
+
+.logo {
+    font-size: 92px;
+}

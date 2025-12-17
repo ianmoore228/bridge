@@ -5,6 +5,7 @@ import sphereImg3 from "images/SectionFourth/sphere-3.png";
 import sphereImg4 from "images/SectionFourth/sphere-4.png";
 import peopleImg1 from "images/SectionFourth/people-1.png";
 import peopleImg2 from "images/SectionFourth/people-2.png";
+import { data } from "./data";
 
 export const SectionFourth = () => {
   return (
@@ -21,63 +22,27 @@ export const SectionFourth = () => {
             className={`${styles.sphere} ${styles.sphereFirst}`}
             alt="sphere"
           />
-          <div className={styles.listContainer}>
-            <div className={styles.listContent}>
-              <h4 className={styles.listTitle}>Резиденты жилых комплексов</h4>
-              <ul className={styles.list}>
-                <li className={styles.listItem}>
-                  Доступ к сервисам по управлению личным жильём и счетами ЖКХ
-                </li>
-                <li className={styles.listItem}>
-                  Онлайн-оплата коммунальных и прочих услуг
-                </li>
-                <li className={styles.listItem}>
-                  Бронирование и оплата всех сервисов, размещённых на территории
-                  жилого комплекса (SPA, фитнес, коворкинг, коммерческие услуги
-                  и др.)
-                </li>
-                <li className={styles.listItem}>
-                  Персонализированная система лояльности с индивидуальными
-                  предложениями и привилегиями для жильцов
-                </li>
-                <li className={styles.listItem}>
-                  Оперативные уведомления о важных событиях, акциях и новостях
-                  комплекса
-                </li>
-              </ul>
-            </div>
-            <img
-              draggable={false}
-              src={peopleImg1}
-              alt="people"
-              className={styles.listImage}
-            />
-          </div>
 
-          <div className={styles.listContainer}>
-            <div className={styles.listContent}>
-              <h4 className={styles.listTitle}>Внешние пользователи</h4>
-              <ul className={styles.list}>
-                <li className={styles.listItem}>
-                  Доступ к бронированию коммерческих услуг, расположенных на
-                  территории жилого комплекса (SPA, рестораны, магазины и другие
-                  сервисы)
-                </li>
-                <li className={styles.listItem}>
-                  Удобное онлайн-бронирование, оплата, участие в акциях
-                </li>
-                <li className={styles.listItem}>
-                  Участие в программе лояльности и получение уведомлений
-                </li>
-              </ul>
-            </div>
-            <img
-              draggable={false}
-              src={peopleImg2}
-              alt="people"
-              className={styles.listImage}
-            />
-          </div>
+          {data.map((item) => {
+            return (
+              <div className={styles.listContainer}>
+                <div className={styles.listContent}>
+                  <h4 className={styles.listTitle}>{item.title}</h4>
+                  <ul className={styles.list}>
+                    {item.listItems.map((listItem) => {
+                      return <li className={styles.listItem}>{listItem}</li>;
+                    })}
+                  </ul>
+                </div>
+                <img
+                  draggable={false}
+                  src={item.img}
+                  alt="people"
+                  className={styles.listImage}
+                />
+              </div>
+            );
+          })}
 
           <img
             draggable={false}
