@@ -59,6 +59,7 @@
 
 .containerLeft {
     width: 50%;
+    display: flex;
 }
 
 .containerRight {
@@ -133,6 +134,22 @@
 .blurFirst {
     margin-left: -15px;
 }
+
+
+@media screen and (max-width: 650px) { 
+    .listWrapper {
+        flex-direction: column;
+    }
+    .containerLeft {
+        width: 100%;
+    }
+
+    .containerRight {
+        width: 100%;
+        /* overflow: hidden; */
+    }
+}
+
 
 
 /* @-moz-keyframes spin {

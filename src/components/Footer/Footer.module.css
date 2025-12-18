@@ -23,3 +23,10 @@
 .logo {
     font-size: 92px;
 }
+
+@media screen and (max-width: 650px) { 
+
+    .imgPeople {
+        max-width: 117px;
+    }
+}

@@ -9,7 +9,7 @@ export const SectionFirst = () => {
       <div className={styles.wrapper}>
         <div className={styles.containerLeft}>
           <h1 className={styles.title}>
-            Добро пожаловать <br />в <span className={styles.bold}>единую</span>{" "}
+            Добро пожаловать <br className={styles.hyphenation}/>в <span className={styles.bold}>единую</span>{" "}
             цифровую платформу{" "}
             <span className={`${styles.logo} logo-bridges`}>МОСТЫ</span> <br />
             для жилых комплексов!

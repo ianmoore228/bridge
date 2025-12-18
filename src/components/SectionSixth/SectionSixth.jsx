@@ -18,19 +18,21 @@ export const SectionSixth = () => {
             инструмент роста бизнеса, лидерства и продвижения бренда
           </h1>
           <div className={styles.listWrapper}>
-            <div className={styles.redLine}></div>
             <div className={styles.containerLeft}>
-              {data.map((item) => {
-                return (
-                  <div className={styles.listItem}>
-                    <div className={styles.listItemCircle}></div>
-                    <div className={styles.listItemTextContainer}>
-                      <h3 className={styles.listItemTitle}>{item.title}</h3>
-                      <p className={styles.listItemText}>{item.text}</p>
+              <div className={styles.redLine}></div>
+              <div className={styles.listContainer}>
+                {data.map((item) => {
+                  return (
+                    <div className={styles.listItem}>
+                      <div className={styles.listItemCircle}></div>
+                      <div className={styles.listItemTextContainer}>
+                        <h3 className={styles.listItemTitle}>{item.title}</h3>
+                        <p className={styles.listItemText}>{item.text}</p>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
             <div className={styles.containerRight}>
               <div

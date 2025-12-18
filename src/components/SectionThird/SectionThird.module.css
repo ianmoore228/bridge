@@ -78,3 +78,24 @@
 .listLoyalty {
     margin-top: -100px;
 }
+
+@media screen and (max-width: 650px) { 
+ .wrapper {
+    flex-direction: column;
+    gap: 25px;
+ }
+
+ .listLoyalty {
+   margin-top: 0;
+ }
+
+ .listAd {
+    margin-top: 0px;
+}
+
+.iphoneImg {
+    position: relative;
+    right: 0;
+}
+
+}

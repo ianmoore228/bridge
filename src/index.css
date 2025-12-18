@@ -96,6 +96,7 @@ body {
   background-color: var(--black);
   scroll-behavior: smooth;
   cursor: default;
+  /* overflow: hidden; */
 }
 
 img {
