@@ -10,7 +10,7 @@ import BlurEffect from "react-progressive-blur";
 export const SectionSixth = () => {
   return (
     <>
-      <section className={styles.sectionSixth}>
+      <section className={styles.section}>
         <div className={styles.wrapper}>
           <h1 className={styles.title}>
             Цифровая платформа{" "}
@@ -33,19 +33,46 @@ export const SectionSixth = () => {
               })}
             </div>
             <div className={styles.containerRight}>
-            <div className={styles.blurContainerFirst}>
-              <img className={styles.redStarFirst} src={redStar} />
-              <BlurEffect  className={styles.blurFirst} position="left" intensity={100} />
+              <div
+                className={`${styles.blurContainer} ${styles.blurContainerFirst}`}
+              >
+                <img
+                  className={`${styles.redStar} ${styles.redStarFirst}`}
+                  src={redStar}
+                />
+                <BlurEffect
+                  className={`${styles.blur} ${styles.blurFirst}`}
+                  position="left"
+                  intensity={100}
+                />
               </div>
-              <img className={styles.redStarSecond} src={redStar} />
-              <img src={iphone1} className={styles.iphoneImgFirst} />
-              <img src={iphone2} className={styles.iphoneImgSecond} />
+              <div
+                className={`${styles.blurContainer} ${styles.blurContainerSecond}`}
+              >
+                <img
+                  className={`${styles.redStar} ${styles.redStarSecond}`}
+                  src={redStar}
+                />
+                <BlurEffect
+                  className={`${styles.blur} ${styles.blurFirst}`}
+                  position="right"
+                  intensity={100}
+                />
+              </div>
+              <img
+                src={iphone1}
+                className={`${styles.iphoneImgFirst} ${styles.iphoneImg}`}
+              />
+              <img
+                src={iphone2}
+                className={`${styles.iphoneImgSecond} ${styles.iphoneImg}`}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <img src={light} className={styles.lightImg}/>
+      <img src={light} className={styles.lightImg} />
     </>
   );
 };

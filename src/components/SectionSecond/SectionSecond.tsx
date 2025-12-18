@@ -3,7 +3,7 @@ import { data } from "./data";
 
 export const SectionSecond = () => {
   return (
-    <section className={styles.sectionSecond}>
+    <section className={styles.section}>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>
           Уникальные цифровые решения <br />

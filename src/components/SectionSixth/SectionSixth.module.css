@@ -20,9 +20,7 @@
 .listItemCircle {
     width: 32px;
     height: 32px;
-    background-image: radial-gradient(
-        at 20% 40%, #FF3300, #ff00c8
-);
+    background-image: radial-gradient(at 20% 40%, #FF3300, #ff00c8);
     border-radius: 50%;
 }
 
@@ -68,15 +66,15 @@
     width: 10%;
 }
 
-.redStarFirst, .redStarSecond, .iphoneImgFirst, .iphoneImgSecond {
+.iphoneImg, .redStar {
     position: absolute;
 }
 
-.redStarFirst, .redStarSecond {
+.redStar {
     height: 470px;
 }
 
-.iphoneImgFirst, .iphoneImgSecond {
+.iphoneImg {
     height: 643px;
 }
 
@@ -91,8 +89,7 @@
 }
 
 .redStarSecond {
-    top: 460px;
-    left: 208px;
+    left: -15px;
 }
 
 .iphoneImgFirst {
@@ -105,19 +102,35 @@
     left: 80px;
 }
 
-.blurContainerFirst {
-    width:  470px;
+.blurContainer {
+    z-index: -1;
+    width: 470px;
     height: 470px;
     position: relative;
-    top: 200px; 
-    left: 107px;
+}
+
+.blur {
+    height: 470px;
+    width: 280px;
     z-index: -1;
 }
 
+.blurContainerSecond { 
+    top: -30px;
+    left: 210px;
+}
+
+.blurContainerFirst {
+    top: 200px;
+    left: 107px;
+}
+
+.blurSecond {
+    top: 460px;
+    left: 208px;
+}
+
 .blurFirst {
-    height: 470px;
-    width:  280px;
-    z-index: -1;
     margin-left: -15px;
 }
 

@@ -4,7 +4,7 @@ import { data } from "./data";
 
 export const SectionThird = () => {
   return (
-    <section className={styles.sectionThird}>
+    <section className={styles.section}>
       <div className={styles.wrapper}>
         <div className={styles.containerLeft}>
           <h1 className={styles.title}>
@@ -15,7 +15,7 @@ export const SectionThird = () => {
             {data.map((item) => {
               return (
                 <div className={`${styles.listContent} ${styles[item.style]}`}>
-                  <img draggable={false} src={item.icon} />
+                  <img src={item.icon} />
                   <h4 className={styles.listTitle}>{item.title}</h4>
                   <ul className={styles.list}>
                     {item.listItems.map((listItem) => {
@@ -29,7 +29,7 @@ export const SectionThird = () => {
           </div>
         </div>
         <div className={styles.containerRight}>
-          <img draggable={false} src={iphoneImg} className={styles.iphoneImg} />
+          <img src={iphoneImg} className={styles.iphoneImg} />
         </div>
       </div>
     </section>

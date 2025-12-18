@@ -4,7 +4,7 @@ import { data } from "./data";
 
 export const SectionFifth = () => {
   return (
-    <section className={styles.sectionFifth}>
+    <section className={styles.section}>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>
           Личный кабинет для разных категорий пользователей на цифровой

@@ -9,7 +9,7 @@ import { data } from "./data";
 
 export const SectionFourth = () => {
   return (
-    <section className={styles.SectionFourth}>
+    <section className={styles.section}>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>
           Сегментация и целевые группы пользователей цифровой платформы{" "}
