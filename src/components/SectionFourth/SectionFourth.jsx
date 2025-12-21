@@ -25,12 +25,12 @@ export const SectionFourth = () => {
 
           {data.map((item) => {
             return (
-              <div className={styles.listContainer}>
+              <div key={item.id} className={styles.listContainer}>
                 <div className={styles.listContent}>
                   <h4 className={styles.listTitle}>{item.title}</h4>
                   <ul className={styles.list}>
-                    {item.listItems.map((listItem) => {
-                      return <li className={styles.listItem}>{listItem}</li>;
+                    {item.listItems.map((listItem, index) => {
+                      return <li key={index} className={styles.listItem}>{listItem}</li>;
                     })}
                   </ul>
                 </div>

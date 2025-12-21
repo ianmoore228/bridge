@@ -6,7 +6,7 @@ export const SectionSecond = () => {
     <section className={styles.section}>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>
-          Уникальные цифровые решения <br />
+          Уникальные цифровые решения <br className={styles.hyphenation} />
           для девелоперов и застройщиков
         </h1>
         <div className={styles.containerCards}>

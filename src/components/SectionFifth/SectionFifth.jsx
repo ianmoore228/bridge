@@ -14,7 +14,7 @@ export const SectionFifth = () => {
         <div className={styles.wrapperCards}>
           {data.map((item) => {
             return (
-              <div className={styles.card}>
+              <div key={item.id} className={styles.card}>
                 <img
                   draggable={false}
                   src={item.icon}

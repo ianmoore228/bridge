@@ -44,9 +44,10 @@
 
 .iphoneImg {
     width: 723px;
-    height: 878px;
+    /* height: 100%; */
     position: absolute;
     z-index: 2;
+    top: 20%;
 }
 
 .name {
@@ -60,7 +61,7 @@
     -webkit-text-fill-color: transparent;
     z-index: 1;
     user-select: none;
-
+    height: 100%;
 }
 
 .backgroundImg {
@@ -82,15 +83,15 @@
     }
 
     .iphoneImg {
-        width: 265px;
-        height: 322px;
+        width: 285px;
+      
     }
 
     .name {
-        font-size: 88px;
+        font-size: 110px;
     }
 
     .textContainer {
-        top: 80px;
+        top: 35%;
     }
 }

@@ -24,9 +24,34 @@
     font-size: 92px;
 }
 
-@media screen and (max-width: 650px) { 
+@media screen and (max-width: 650px) {
+    .wrapper {
+        margin-top: 74px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
 
     .imgPeople {
-        max-width: 117px;
+        max-width: 250px;
+        border-radius: 30px 30px 30px 174px;
+
+    }
+
+    .container {
+        justify-content: center;
+        margin-bottom: 80px;
+        gap: 20px;
+    }
+
+    .title {
+    
+        font-size: 19px;
+    }
+
+    .bridge {
+        height: 150px;
+        background-size: contain;
     }
 }

@@ -3,6 +3,7 @@ import peopleImg2 from "images/SectionFourth/people-2.png";
 
 export const data = [
   {
+    id: 1,
     title: "Резиденты жилых комплексов",
     img: peopleImg1,
     listItems: [
@@ -14,6 +15,7 @@ export const data = [
     ],
   },
   {
+    id: 2,
     title: "Внешние пользователи",
     img: peopleImg2,
     listItems: [

@@ -14,12 +14,12 @@ export const SectionThird = () => {
           <div className={styles.listsWrapper}>
             {data.map((item) => {
               return (
-                <div className={`${styles.listContent} ${styles[item.style]}`}>
+                <div key={item.id} className={`${styles.listContent} ${styles[item.style]}`}>
                   <img src={item.icon} />
                   <h4 className={styles.listTitle}>{item.title}</h4>
                   <ul className={styles.list}>
-                    {item.listItems.map((listItem) => {
-                      return <li className={styles.listItem}>{listItem}</li>;
+                    {item.listItems.map((listItem, index) => {
+                      return <li key={index} className={styles.listItem}>{listItem}</li>;
                     })}
                   </ul>
                 </div>

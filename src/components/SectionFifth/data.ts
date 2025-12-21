@@ -6,12 +6,14 @@ import tenantIcon from "images/SectionFifth/icon-tenant.svg";
 
 export const data = [
   {
+    id: 1,
     icon: homeownerIcon,
     alt: "homeownerIcon",
     title: "Для жильцов",
     text: "Управление счетами, бронирование сервисов, история платежей, поддержка, коммуникация с управляющей компанией",
   },
   {
+    id: 2,
     icon: visitorIcon,
     alt: "visitorIcon",
     title: "Для посетителей комплекса",
@@ -19,18 +21,21 @@ export const data = [
   },
 
   {
+    id: 3,
     icon: adIcon,
     alt: "adIcon",
     title: "Для рекламодателей",
     text: "Кабинет для запуска и управления рекламными кампаниями, настройки аудитории, отслеживания эффективности и анализа статистики",
   },
   {
+    id: 4,
     icon: managementIcon,
     alt: "managementIcon",
     title: "Для управляющей компании",
     text: "Администрирование сервисов и объектов, рассылка уведомлений, аналитика использования услуг, коммуникация с резидентами",
   },
   {
+    id: 5,
     icon: tenantIcon,
     alt: "tenantIcon",
     title: "Для коммерческих арендаторов",

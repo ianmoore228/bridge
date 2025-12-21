@@ -67,7 +67,8 @@
     width: 10%;
 }
 
-.iphoneImg, .redStar {
+.iphoneImg,
+.redStar {
     position: absolute;
 }
 
@@ -84,10 +85,10 @@
     margin-top: 245px;
 }
 
-.redStarFirst {
-    /* -webkit-animation: spin 8s infinite linear;
-    animation: spin 8s infinite linear; */
-}
+/* .redStarFirst {
+    -webkit-animation: spin 8s infinite linear;
+    animation: spin 8s infinite linear;
+} */
 
 .redStarSecond {
     left: -15px;
@@ -116,7 +117,7 @@
     z-index: -1;
 }
 
-.blurContainerSecond { 
+.blurContainerSecond {
     top: -30px;
     left: 210px;
 }
@@ -136,21 +137,129 @@
 }
 
 
-@media screen and (max-width: 650px) { 
+@media screen and (max-width: 650px) {
+
+    .section {
+        overflow-x: clip;
+    }
+
     .listWrapper {
         flex-direction: column;
+        gap: 20px;
     }
+
+    .redLine {
+        height: 35em;
+    }
+
     .containerLeft {
         width: 100%;
     }
 
     .containerRight {
         width: 100%;
-        /* overflow: hidden; */
     }
+
+    .title {
+        margin: 67px 0 78px 0;
+    }
+
+    .listItem {
+        gap: 16px;
+        width: 80%;
+    }
+
+    .listItemTitle {
+        font-size: 19px;
+    }
+
+    .listItemTextContainer {
+        margin-left: 0;
+    }
+
+    .listItem:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    .containerLeft {
+        justify-content: center;
+    }
+
+    .iphoneImg {
+        height: 430px;
+    }
+
+    .redStar {
+        height: 350px;
+    }
+
+    .redStarFirst {
+        top: 0;
+        left: -10%;
+    }
+
+    .redStarSecond {
+        left: -8%;
+        top: 4%;
+    }
+
+    .iphoneImgFirst {
+        top: 7%;
+        left: 40%;
+    }
+
+    .iphoneImgSecond {
+        left: 27%;
+        top: 53%;
+    }
+
+    .blurContainer {
+        width: 360px;
+        height: 360px;
+    }
+
+    .blurContainerFirst {
+        top: 11em;
+        left: 15%;
+    }
+
+    .blurContainerSecond {
+        top: -1%;
+        right: 30%;
+    }
+
+    .blurSecond {
+        top: 20%;
+        left: 20%;
+        margin-right: -15%;
+    }
+
+    .blurFirst {
+        margin-left: -15%;
+        width: 230px;
+    }
+
+    .lightImg {
+        width: 100%;
+        margin-top: 160px;
+    }
+
 }
 
+@media screen and (max-width: 520px) {
+    .containerRight {
+        margin-left: -15%;
+    }
 
+    .redLine {
+        height: max-content;
+    }
+
+    .listItemTextContainer {
+        width: calc(100% - 48px);
+    }
+
+}
 
 /* @-moz-keyframes spin {
     from { -moz-transform: rotate(0deg); }

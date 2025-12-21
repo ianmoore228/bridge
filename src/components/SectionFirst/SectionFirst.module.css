@@ -1,5 +1,5 @@
 .wrapper {
-    padding: 0 20%;
+    padding: 0 15%;
     display: flex;
 }
 
@@ -57,11 +57,30 @@
     .wrapper { 
        flex-direction: column;
        gap: 25px;
+       padding: var(--wrapper-padding);
+       margin-top: 79px;
+    }
+
+    .contentLeft {
+        padding-right: 0;
     }
 
     .containerRight {
         flex-direction: column;
         gap: 18px;
+        align-items: center;
+    }
+
+    .contentText { 
+      max-width: 100%;
+      padding-top: 26px;
     }
     
+}
+
+
+@media screen and (max-width: 450px) {
+    .wrapper { 
+        margin-top: 30%;
+    }
 }

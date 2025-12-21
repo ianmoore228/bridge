@@ -8,8 +8,8 @@ export const SectionSeventh = () => {
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <div className={styles.containerTop}>
-          <div className={styles.contentLeft}>
+        <div className={styles.containerText}>
+          <div className={styles.contentTextLeft}>
             <p className={styles.text}>
               Современная цифровая платформа{" "}
               <span className={styles.bold}>МОСТЫ</span> открывает новые
@@ -31,13 +31,13 @@ export const SectionSeventh = () => {
               компании.
             </p>
           </div>
-          <div className={styles.contentRight}>
+          <div className={styles.contentTextRight}>
             <img src={img1} className={styles.imageFirst} />
             <img src={img2} className={styles.imageSecond} />
           </div>
         </div>
-        <div className={styles.containerBottom}>
-          <div className={styles.contentLeft}>
+        <div className={styles.containerPhoto}>
+          <div className={styles.contentPhotoLeft}>
             <div className={styles.banner}>
               <h3 className={styles.bannerTitle}>Один комплекс — множество сервисов</h3>
               <ul className={styles.list}>
@@ -52,7 +52,7 @@ export const SectionSeventh = () => {
             <div className={styles.gradient}></div>
             <img src={iphone} className={styles.imgIphone}/>
           </div>
-          <div className={styles.contentRight}>
+          <div className={styles.contentPhotoRight}>
             <h4 className={styles.titleText}>
               Используйте возможности цифровой экосистемы, чтобы масштабировать
               бизнес, укрепить лояльность клиентов и выстроить долгосрочный

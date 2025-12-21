@@ -23,7 +23,7 @@ export const SectionSixth = () => {
               <div className={styles.listContainer}>
                 {data.map((item) => {
                   return (
-                    <div className={styles.listItem}>
+                    <div key={item.id} className={styles.listItem}>
                       <div className={styles.listItemCircle}></div>
                       <div className={styles.listItemTextContainer}>
                         <h3 className={styles.listItemTitle}>{item.title}</h3>
@@ -56,7 +56,7 @@ export const SectionSixth = () => {
                   src={redStar}
                 />
                 <BlurEffect
-                  className={`${styles.blur} ${styles.blurFirst}`}
+                  className={`${styles.blur} ${styles.blurSecond}`}
                   position="right"
                   intensity={100}
                 />

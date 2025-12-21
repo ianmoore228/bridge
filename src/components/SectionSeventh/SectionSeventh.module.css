@@ -15,37 +15,36 @@
     gap: 160px;
 }
 
-.containerTop,
-.containerBottom {
+.containerText,
+.containerPhoto {
     display: flex;
     justify-content: space-around;
 }
 
-.containerBottom {
+.containerPhoto {
     justify-content: center;
     align-items: center;
 
 }
 
-.containerTop .contentLeft {
+.contentTextLeft {
     display: flex;
     flex-direction: column;
     gap: 34px;
-
 }
 
-.containerTop .contentRight {
+.contentTextRight {
     display: flex;
     flex-direction: column;
     gap: 23px;
 
 }
 
-.containerBottom .contentLeft {
+.contentPhotoLeft {
     position: relative;
 }
 
-.containerBottom .contentRight {
+.contentPhotoRight {
     margin-top: 200px;
     margin-left: -90px;
 }
@@ -158,12 +157,74 @@
 
 @media screen and (max-width: 650px) {
 
-    .containerTop,
-    .containerBottom {
+    .text {
+        max-width: 100%;
+    }
+
+    .section {
+        padding-top: 140px;
+        border-radius: 0px 0px 30px 150px;
+    }
+
+    .gradient {
+        border-radius: 0px 0px 30px 150px;
+    }
+
+    .wrapper {
+        gap: 75px;
+    }
+
+    .containerText,
+    .containerPhoto {
         flex-direction: column-reverse;
     }
 
-    .imgIphone {
-        max-width: 344px;
+    .containerPhoto {
+      gap: 95px;
     }
+
+    .contentPhotoRight{
+        margin: 0;
+    }
+
+    .imgIphone {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .imageFirst, .imageSecond, .imageMap {
+       display: none;
+    }
+
+    .contentTextLeft { 
+        gap: 17px;
+    }
+
+    .titleText {
+        max-width: 100%;
+    }
+
+    .banner {
+      max-width: 310px;
+      padding: 12px 18px;
+      top: -60px;
+    }
+
+    .bannerTitle {
+        font-size: 19px;
+        max-width: 250px;
+    }
+
+    .listItem {
+        font-size: 13px;
+    }
+
+    .blackLineFirst, .blackLineThird {
+        width: 16px;
+        top: 30%;
+    }
+    .blackLineSecond, .blackLineFourth {
+      display: none;
+    }
+   
 }

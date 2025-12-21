@@ -79,23 +79,61 @@
     margin-top: -100px;
 }
 
-@media screen and (max-width: 650px) { 
- .wrapper {
-    flex-direction: column;
-    gap: 25px;
- }
+@media screen and (max-width: 650px) {
+    .section {
+        border-radius: 30px 30px 30px 150px;
+        overflow: visible;
+        overflow-x: clip;
+    }
 
- .listLoyalty {
-   margin-top: 0;
- }
+    .wrapper {
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 0;
+        padding-bottom: 0px;
+    }
 
- .listAd {
-    margin-top: 0px;
+    .containerLeft {
+        padding-top: 64px;
+        justify-content: center;
+    }
+
+    .containerRight {
+        height: 600px;
+        flex: auto;
+    }
+
+    .listsWrapper {
+        padding-top: 47px;
+        justify-content: center;
+    }
+
+    .listContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .listLoyalty {
+        margin-top: 0;
+    }
+
+    .listAd {
+        margin-top: 0px;
+    }
+
+    .iphoneImg {
+        width: 485px;
+        position: relative;
+        right: -45%;
+        z-index: 3;
+    }
+
 }
 
-.iphoneImg {
-    position: relative;
-    right: 0;
-}
-
+@media screen and (max-width: 450px) {
+    .iphoneImg {
+        right: -20%;
+    }
 }
