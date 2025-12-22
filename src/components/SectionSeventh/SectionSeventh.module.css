@@ -134,6 +134,7 @@
 
 .blackLineFirst {
     top: 500px;
+    left: 0;
 }
 
 .blackLineSecond {
@@ -155,7 +156,57 @@
     bottom: -3px;
 }
 
-@media screen and (max-width: 650px) {
+
+@media screen and (max-width: 1650px) {
+    .banner {
+        max-width: 320px;
+        padding: 12px 18px;
+        top: -60px;
+      }
+  
+      .bannerTitle {
+          font-size: 19px;
+          max-width: 250px;
+      }
+  
+      .listItem {
+          font-size: 14px;
+      }
+  
+    .containerText {
+      justify-content: space-between;
+    }
+    .blackLineFirst,
+    .blackLineSecond,
+    .blackLineThird,
+    .blackLineFourth {
+    width: 32px;
+    }
+  }
+
+@media screen and (max-width: 1350px) {
+
+    .section{
+        padding-top: 200px;
+    }
+
+    .containerText {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 50px;
+    }
+  
+    .imgIphone {
+        width: 600px;
+    }
+
+    .contentTextRight {
+        margin-right: -15%;
+    }
+
+}
+
+@media screen and (max-width: 1050px) {
 
     .text {
         max-width: 100%;
@@ -174,7 +225,6 @@
         gap: 75px;
     }
 
-    .containerText,
     .containerPhoto {
         flex-direction: column-reverse;
     }
@@ -185,6 +235,7 @@
 
     .contentPhotoRight{
         margin: 0;
+        position: relative;
     }
 
     .imgIphone {
@@ -204,27 +255,50 @@
         max-width: 100%;
     }
 
-    .banner {
-      max-width: 310px;
-      padding: 12px 18px;
-      top: -60px;
-    }
-
-    .bannerTitle {
-        font-size: 19px;
-        max-width: 250px;
-    }
-
-    .listItem {
-        font-size: 13px;
-    }
-
-    .blackLineFirst, .blackLineThird {
+    .blackLineFirst {
+        left: -16px;
         width: 16px;
-        top: 30%;
+        top: -30%;
     }
+
+    .blackLineThird {
+        right: -16px;
+        width: 16px;
+        top: -30%;
+    }
+
     .blackLineSecond, .blackLineFourth {
       display: none;
     }
    
+}
+
+
+@media screen and (max-width: 545px) {
+    .list {
+        margin-top: 12px;
+        gap: 5px;
+    }
+
+    .banner {
+        right: 0;
+        top: -10%;
+    }
+
+    .listItem {
+        padding: 4px 8px;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+    .banner {
+        top: -15%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .banner {
+        top: -17%;
+    }
 }

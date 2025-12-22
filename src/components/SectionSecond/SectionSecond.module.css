@@ -17,6 +17,8 @@
 .containerCards {
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .contentCard {
@@ -34,7 +36,6 @@
 .bgCard {
     border-radius: 30px;
     box-sizing: content-box;
-
 }
 
 .textCard {
@@ -68,12 +69,47 @@
         align-items: center;
         gap: 22px;
     }
+
     .section {
         padding: 79px 0 79px 0;
     }
 
     .title {
-      margin-bottom: 22px;
+        margin-bottom: 22px;
     }
 }
 
+@media screen and (max-width: 410px) {
+    .graphImg {
+        border-radius: 0 0 26px 26px;
+        width: 380px;
+    }
+
+    .contentCard {
+        width: 380px;
+    }
+
+    .bgCard {
+        width: 380px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .graphImg {
+        border-radius: 0 0 26px 26px;
+        width: 360px;
+    }
+
+    .contentCard {
+        width: 360px;
+    }
+
+    .bgCard {
+        width: 360px;
+    }
+
+    .textCard {
+        font-size: 14px;
+        width: 320px;
+    }
+}

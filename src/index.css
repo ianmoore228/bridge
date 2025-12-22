@@ -146,6 +146,12 @@ a {
   -webkit-text-fill-color: transparent; 
 }
 
+@media screen and (max-width: 1500px) {
+  :root {
+    --wrapper-padding: 0 32px;
+  }
+}
+
 @media screen and (max-width: 650px) {
 
   :root {

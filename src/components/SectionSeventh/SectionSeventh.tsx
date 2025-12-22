@@ -53,6 +53,8 @@ export const SectionSeventh = () => {
             <img src={iphone} className={styles.imgIphone}/>
           </div>
           <div className={styles.contentPhotoRight}>
+          <div className={styles.blackLineThird}></div>
+          <div className={styles.blackLineFirst}></div>
             <h4 className={styles.titleText}>
               Используйте возможности цифровой экосистемы, чтобы масштабировать
               бизнес, укрепить лояльность клиентов и выстроить долгосрочный
@@ -62,9 +64,9 @@ export const SectionSeventh = () => {
           </div>
         </div>
       </div>
-      <div className={styles.blackLineFirst}></div>
+
       <div className={styles.blackLineSecond}></div>
-      <div className={styles.blackLineThird}></div>
+
       <div className={styles.blackLineFourth}></div>
     </section>
   );

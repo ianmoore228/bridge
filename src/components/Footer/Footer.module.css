@@ -17,14 +17,21 @@
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 140px;
-    align-items: center
+    align-items: center;
+    gap: 16px;
 }
 
 .logo {
     font-size: 92px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1250px) {
+    .imgPeople {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 850px) {
     .wrapper {
         margin-top: 74px;
     }
@@ -35,8 +42,7 @@
 
     .imgPeople {
         max-width: 250px;
-        border-radius: 30px 30px 30px 174px;
-
+        border-radius: 20px 20px 20px 100px;
     }
 
     .container {
@@ -46,12 +52,18 @@
     }
 
     .title {
-    
         font-size: 19px;
     }
 
     .bridge {
         height: 150px;
-        background-size: contain;
+        background-size: cover
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .imgPeople {
+        max-width: 150px;
+        border-radius: 9px 9px 9px 49px;
     }
 }

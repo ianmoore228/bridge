@@ -11,7 +11,7 @@ export const SectionFirst = () => {
           <h1 className={styles.title}>
             Добро пожаловать <br className={styles.hyphenation}/>в <span className={styles.bold}>единую</span>{" "}
             цифровую платформу{" "}
-            <span className={`${styles.logo} logo-bridges`}>МОСТЫ</span> <br />
+            <span className={`${styles.logo} logo-bridges`}>МОСТЫ</span> <br className={styles.hyphenation}/>
             для жилых комплексов!
           </h1>
           <div className={styles.contentText}>

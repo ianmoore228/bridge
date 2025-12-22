@@ -8,7 +8,7 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    padding: var(--wrapper-padding); 
+    padding: var(--wrapper-padding);
     align-items: center;
 }
 
@@ -47,7 +47,7 @@
     text-align: center;
     width: 100%;
     margin: 20px;
-} 
+}
 
 .bridge {
     background-image: url('../../assets/images/SectionFifth/bridge.png');
@@ -55,11 +55,10 @@
     background-size: auto 100%;
 }
 
-@media screen and (max-width: 650px) { 
+@media screen and (max-width: 650px) {
 
     .bridge {
         height: 150px;
-  
     }
 
     .section {
@@ -70,7 +69,13 @@
         padding-bottom: 27px;
     }
 
-    .wrapperCards { 
+    .wrapperCards {
         padding-bottom: 47px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bridge {
+        background-size: cover
     }
 }
