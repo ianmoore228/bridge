@@ -2,36 +2,90 @@ import styles from "./Hero.module.css";
 import glow from "images/Hero/glow-orange.png";
 import iphone from "images/Hero/iphone.png";
 import blackbg from "images/Hero/black-bg.png";
-import { AnimatePresence, motion, useInView } from "framer-motion";
-import { useRef } from "react"
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  useTransform,
+  useScroll,
+  useVelocity,
+  useSpring,
+} from "framer-motion";
+import { useRef } from "react";
+import { SplittingText } from "@/components/animation/SplittingText";
+import { data } from "./data";
 
 export const Hero = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px 0px -500px 0px"});
+  const lightRef = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -45% 0px" });
+  const lightIsInView = useInView(lightRef, { once: true });
   const text = "МОСТЫ";
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end start", "start end"],
+  });
+
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["end start", "start end"],
+  });
+
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 5,
+    stiffness: 4,
+  });
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.1, 0.3, 0.7, 1],
+    [0, 1, 1, 0]
+  );
+
+  const y = useTransform(smoothVelocity, [0, 1], [0.2, -0.1], {
+    clamp: false,
+  });
 
   return (
     <section className={styles.hero}>
-      <img draggable={false} className={styles.glowImg} src={glow} alt="glow" />
+      <motion.img
+        ref={lightRef}
+        initial={{ opacity: 0 }}
+        animate={lightIsInView ? { opacity: 1 } : {}}
+        transition={{ duration: 1, type: "tween" }}
+        draggable={false}
+        className={styles.glowImg}
+        src={glow}
+        alt="glow"
+      />
       <div className={styles.wrapper}>
-        <h1 className={styles.title}>
-          Единая цифровая платформа «
-          <span className={`${styles.logo} logo-bridges`}>МОСТЫ</span>» для
-          управления жилыми комплексами
-        </h1>
+        <div className={styles.titleContainer}>
+          {data.map((item, index) => (
+            <SplittingText
+              key={item.id}
+              className={styles[item.style]}
+              delay={250 * index}
+              text={item.text}
+            />
+          ))}
+        </div>
 
         <div className={styles.iphoneContainer}>
-          <img
+          <motion.img
             draggable={false}
             className={styles.iphoneImg}
             src={iphone}
+            style={{ y, opacity }}
             alt="iphone"
-          ></img>
+          />
+
           <div className={styles.textContainer}>
             <AnimatePresence>
               {text.split("").map((char, i) => (
                 <motion.p
-                ref={ref}
+                  ref={ref}
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}

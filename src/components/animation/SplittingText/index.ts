@@ -1,0 +1,1 @@
+export { SplittingText } from "./SplittingText"

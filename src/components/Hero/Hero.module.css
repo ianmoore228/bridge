@@ -10,7 +10,7 @@
     align-items: center
 }
 
-.title {
+/* .title {
     font-family: Gilroy;
     font-weight: 200;
     font-size: 88px;
@@ -21,15 +21,8 @@
     text-align: center;
     max-width: 1290px;
     margin-top: 23%;
-}
+} */
 
-.logo {
-    font-weight: 900;
-    background: var(--logo-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 .iphoneContainer {
     background-size: 100% 100%;
@@ -74,6 +67,40 @@
     justify-content: center;
     position: absolute;
     top: 440px;
+}
+
+.titleContainer {
+    display: flex; 
+     flex-wrap: wrap;
+    gap: 1rem; 
+    max-width: 1290px;
+    justify-content: center;
+    margin-top: 23%;
+}
+
+.title {
+    font-family: Gilroy;
+    font-weight: 200;
+    font-size: 88px;
+    color: #a8a8a8;  
+}
+
+
+.logo {
+    font-family: Gilroy;
+    font-size: 88px;
+    font-weight: 900;
+    color: rgb(235, 36, 79);
+}
+
+@media screen and (min-width: 2000px) {
+    .iphoneContainer {
+       max-height: 1500px;
+    }
+
+    .backgroundImg {
+        max-height: 1500px;
+    }
 }
 
 @media screen and (max-width: 1400px) {

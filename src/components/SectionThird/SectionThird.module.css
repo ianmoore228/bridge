@@ -67,7 +67,7 @@
 }
 
 .iphoneImg {
-    right: -150px;
+    right: -8%;
     position: absolute;
 }
 
@@ -78,6 +78,8 @@
 .listLoyalty {
     margin-top: -100px;
 }
+
+
 
 @media screen and (max-width: 1350px) {
 
