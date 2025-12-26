@@ -14,8 +14,13 @@ import {
 import { useRef } from "react";
 import { SplittingText } from "@/components/animation/SplittingText";
 import { data } from "./data";
+import { useMediaQuery } from "react-responsive";
 
 export const Hero = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 1224px)",
+  });
+
   const ref = useRef(null);
   const lightRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -45% 0px" });
@@ -33,10 +38,20 @@ export const Hero = () => {
   });
 
   const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 5,
-    stiffness: 4,
-  });
+
+  let smoothVelocity;
+
+  if (isMobile) {
+    smoothVelocity = useSpring(scrollVelocity, {
+      damping: 15,
+      stiffness: 4,
+    });
+  } else {
+    smoothVelocity = useSpring(scrollVelocity, {
+      damping: 8,
+      stiffness: 4,
+    });
+  }
 
   const opacity = useTransform(
     scrollYProgress,
@@ -44,9 +59,17 @@ export const Hero = () => {
     [0, 1, 1, 0]
   );
 
-  const y = useTransform(smoothVelocity, [0, 1], [0.2, -0.1], {
-    clamp: false,
-  });
+  let y;
+
+  if (isMobile) {
+    y = useTransform(smoothVelocity, [0.5, 0.7], [0.05, -0.05], {
+      clamp: false,
+    });
+  } else {
+    y = useTransform(smoothVelocity, [0, 1], [0.2, -0.1], {
+      clamp: false,
+    });
+  }
 
   return (
     <section className={styles.hero}>

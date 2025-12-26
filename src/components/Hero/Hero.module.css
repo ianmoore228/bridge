@@ -91,6 +91,7 @@
     font-size: 88px;
     font-weight: 900;
     color: rgb(235, 36, 79);
+
 }
 
 @media screen and (min-width: 2000px) {
@@ -107,6 +108,14 @@
 
     .title {
     font-size: 60px;
+    }
+
+    .logo {
+        height: 100px;
+    }
+
+    .titleContainer {
+        align-items: flex-end;
     }
 
     .textContainer {
@@ -141,6 +150,11 @@
 }
 
 @media screen and (max-width: 650px) {
+
+    .logo {
+        height: 63px;
+        font-size: 60px;
+    }
 
     .title {
         font-size: 30px;

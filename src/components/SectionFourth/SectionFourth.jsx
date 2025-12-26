@@ -15,13 +15,15 @@ import {
   useSpring,
 } from "framer-motion";
 import { useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export const SectionFourth = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 1224px)",
+  });
   const ref = useRef(null);
   const [isRendered, setIsRendered] = useState(false);
-
   const isInView = useInView(ref, { once: true, margin: "0px 0px -45% 0px" });
-
   const sphereIsInView = useInView(ref, { once: true });
 
   const { scrollY } = useScroll({
@@ -35,10 +37,20 @@ export const SectionFourth = () => {
   });
 
   const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 5,
-    stiffness: 4,
-  });
+
+  let smoothVelocity;
+
+  if (isMobile) {
+    smoothVelocity = useSpring(scrollVelocity, {
+      damping: 15,
+      stiffness: 4,
+    });
+  } else {
+    smoothVelocity = useSpring(scrollVelocity, {
+      damping: 10,
+      stiffness: 4,
+    });
+  }
 
   const dragConstraints = {
     left: -50,
@@ -51,45 +63,83 @@ export const SectionFourth = () => {
     [0.5, 1, 1, 0.5]
   );
 
-  const y1 = useTransform(smoothVelocity, [0, 1], [0.1, -0.1], {
-    clamp: false,
-  });
+  let y1, y2, y3, y4;
 
-  const y2 = useTransform(
-    smoothVelocity,
-    [0, 1],
-    [
-      0.1 * (Math.random() * (2 - 0.1 + 1)) + 0.1,
-      -0.1 * (Math.random() * (2 - 0.1 + 1)) + 0.1,
-    ],
-    {
+  if (isMobile) {
+    y1 = useTransform(smoothVelocity, [0.3, 0.8], [0.04, -0.04], {
       clamp: false,
-    }
-  );
-
-  const y3 = useTransform(
-    smoothVelocity,
-    [0, 1],
-    [
-      0.1 * (Math.random() * (2 - 0.1 + 1)) + 0.1,
-      -0.1 * (Math.random() * (2 - 0.1 + 1)) + 0.1,
-    ],
-    {
+    });
+    y2 = useTransform(
+      smoothVelocity,
+      [0.3, 0.8],
+      [
+        0.04 * (Math.random() * (0.04 + 0.04 + 1)) - 0.04,
+        -0.04 * (Math.random() * (0.04 + 0.04 + 1)) - 0.04,
+      ],
+      {
+        clamp: false,
+      }
+    );
+    y3 = useTransform(
+      smoothVelocity,
+      [0.3, 0.8],
+      [
+        0.04 * (Math.random() * (1 - 0.04 + 1)) + 0.1,
+        -0.04 * (Math.random() * (1 - 0.04 + 1)) + 0.1,
+      ],
+      {
+        clamp: false,
+      }
+    );
+    y4 = useTransform(
+      smoothVelocity,
+      [0.3, 0.8],
+      [
+        0.04 * (Math.random() * (1 - 0.04 + 1)) + 0.1,
+        -0.04 * (Math.random() * (1 - 0.04 + 1)) + 0.1,
+      ],
+      {
+        clamp: false,
+      }
+    );
+  } else {
+    y1 = useTransform(smoothVelocity, [0.3, 0.8], [0.1, -0.1], {
       clamp: false,
-    }
-  );
-
-  const y4 = useTransform(
-    smoothVelocity,
-    [0, 1],
-    [
-      0.1 * (Math.random() * (2 - 0.1 + 1)) + 0.1,
-      -0.1 * (Math.random() * (2 - 0.1 + 1)) + 0.1,
-    ],
-    {
-      clamp: false,
-    }
-  );
+    });
+    y2 = useTransform(
+      smoothVelocity,
+      [0.3, 0.8],
+      [
+        0.1 * (Math.random() * (1 - 0.1 + 1)) + 0.1,
+        -0.1 * (Math.random() * (1 - 0.1 + 1)) + 0.1,
+      ],
+      {
+        clamp: false,
+      }
+    );
+    y3 = useTransform(
+      smoothVelocity,
+      [0.3, 0.8],
+      [
+        0.1 * (Math.random() * (1 - 0.1 + 1)) + 0.1,
+        -0.1 * (Math.random() * (1 - 0.1 + 1)) + 0.1,
+      ],
+      {
+        clamp: false,
+      }
+    );
+    y4 = useTransform(
+      smoothVelocity,
+      [0.3, 0.8],
+      [
+        0.1 * (Math.random() * (1 - 0.1 + 1)) + 0.1,
+        -0.1 * (Math.random() * (1 - 0.1 + 1)) + 0.1,
+      ],
+      {
+        clamp: false,
+      }
+    );
+  }
 
   setTimeout(() => {
     if (isInView) {
@@ -112,6 +162,8 @@ export const SectionFourth = () => {
         </motion.h1>
         <div className={styles.listWrapper}>
           <motion.img
+            initial={{ opacity: 0 }}
+            animate={isRendered ? { opacity: 1 } : {}}
             drag
             dragConstraints={dragConstraints}
             style={{ y: y1 }}
@@ -159,34 +211,73 @@ export const SectionFourth = () => {
               </motion.div>
             );
           })}
-
-          <motion.img
-            drag
-            dragConstraints={dragConstraints}
-            style={{ y: y2 }}
-            draggable={false}
-            src={sphereImg2}
-            className={`${styles.sphere} ${styles.sphereSecond}`}
-            alt="sphere"
-          />
-          <motion.img
-            drag
-            dragConstraints={dragConstraints}
-            style={{ y: y3 }}
-            draggable={false}
-            src={sphereImg3}
-            className={`${styles.sphere} ${styles.sphereThird}`}
-            alt="sphere"
-          />
-          <motion.img
-            drag
-            dragConstraints={dragConstraints}
-            style={{ y: y4 }}
-            draggable={false}
-            src={sphereImg4}
-            className={`${styles.sphere} ${styles.sphereFourth}`}
-            alt="sphere"
-          />
+          {isMobile ? (
+            <>
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={isRendered ? { opacity: 1 } : {}}
+                style={{ y: y2 }}
+                draggable={false}
+                src={sphereImg2}
+                className={`${styles.sphere} ${styles.sphereSecond}`}
+                alt="sphere"
+              />
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={isRendered ? { opacity: 1 } : {}}
+                style={{ y: y3 }}
+                draggable={false}
+                src={sphereImg3}
+                className={`${styles.sphere} ${styles.sphereThird}`}
+                alt="sphere"
+              />
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={isRendered ? { opacity: 1 } : {}}
+                style={{ y: y4 }}
+                draggable={false}
+                src={sphereImg4}
+                className={`${styles.sphere} ${styles.sphereFourth}`}
+                alt="sphere"
+              />
+            </>
+          ) : (
+            <>
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={isRendered ? { opacity: 1 } : {}}
+                drag
+                dragConstraints={dragConstraints}
+                style={{ y: y2 }}
+                draggable={false}
+                src={sphereImg2}
+                className={`${styles.sphere} ${styles.sphereSecond}`}
+                alt="sphere"
+              />
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={isRendered ? { opacity: 1 } : {}}
+                drag
+                dragConstraints={dragConstraints}
+                style={{ y: y3 }}
+                draggable={false}
+                src={sphereImg3}
+                className={`${styles.sphere} ${styles.sphereThird}`}
+                alt="sphere"
+              />
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={isRendered ? { opacity: 1 } : {}}
+                drag
+                dragConstraints={dragConstraints}
+                style={{ y: y4 }}
+                draggable={false}
+                src={sphereImg4}
+                className={`${styles.sphere} ${styles.sphereFourth}`}
+                alt="sphere"
+              />
+            </>
+          )}
         </div>
       </div>
     </section>

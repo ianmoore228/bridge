@@ -1,5 +1,4 @@
-'use client';
-import React, { useRef, useLayoutEffect, useState } from 'react';
+import React, { useRef, useLayoutEffect, useState } from "react";
 import {
   motion,
   useScroll,
@@ -7,14 +6,16 @@ import {
   useTransform,
   useMotionValue,
   useVelocity,
-  useAnimationFrame
-} from 'motion/react';
-import "./bridge.css"
+  useAnimationFrame,
+} from "motion/react";
+import styles from "./ScrollVelocity.module.css";
+import { useMediaQuery } from "react-responsive";
 
 interface VelocityMapping {
   input: [number, number];
   output: [number, number];
 }
+
 interface VelocityTextProps {
   children: React.ReactNode;
   baseVelocity: number;
@@ -29,6 +30,7 @@ interface VelocityTextProps {
   parallaxStyle?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
 }
+
 interface ScrollVelocityProps {
   scrollContainerRef?: React.RefObject<HTMLElement>;
   texts: string[];
@@ -43,8 +45,12 @@ interface ScrollVelocityProps {
   parallaxStyle?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
 }
-function useElementWidth<T extends HTMLElement>(ref: React.RefObject<T | null>): number {
+
+function useElementWidth<T extends HTMLElement>(
+  ref: React.RefObject<T | null>
+): number {
   const [width, setWidth] = useState(0);
+
   useLayoutEffect(() => {
     function updateWidth() {
       if (ref.current) {
@@ -52,31 +58,34 @@ function useElementWidth<T extends HTMLElement>(ref: React.RefObject<T | null>):
       }
     }
     updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   }, [ref]);
+
   return width;
 }
+
+let copies: number;
 
 export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
   scrollContainerRef,
   texts = [],
   velocity = 100,
-  className = '',
+  className = "",
   damping = 50,
   stiffness = 400,
-  numCopies = 6,
+  numCopies = copies,
   velocityMapping = { input: [0, 1000], output: [0, 5] },
-  parallaxClassName,
-  scrollerClassName,
+  parallaxClassName = styles.parallax,
+  scrollerClassName = styles.scroller,
   parallaxStyle,
-  scrollerStyle
+  scrollerStyle,
 }) => {
   function VelocityText({
     children,
     baseVelocity = velocity,
     scrollContainerRef,
-    className = '',
+    className = "",
     damping,
     stiffness,
     numCopies,
@@ -84,15 +93,27 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     parallaxClassName,
     scrollerClassName,
     parallaxStyle,
-    scrollerStyle
+    scrollerStyle,
   }: VelocityTextProps) {
+    const isMobile = useMediaQuery({
+      query: "(max-width: 650px)",
+    });
+
+    if (isMobile) {
+      copies = 6;
+    } else {
+      copies = 12;
+    }
+
     const baseX = useMotionValue(0);
-    const scrollOptions = scrollContainerRef ? { container: scrollContainerRef } : {};
+    const scrollOptions = scrollContainerRef
+      ? { container: scrollContainerRef }
+      : {};
     const { scrollY } = useScroll(scrollOptions);
     const scrollVelocity = useVelocity(scrollY);
     const smoothVelocity = useSpring(scrollVelocity, {
       damping: damping ?? 50,
-      stiffness: stiffness ?? 400
+      stiffness: stiffness ?? 400,
     });
     const velocityFactor = useTransform(
       smoothVelocity,
@@ -100,40 +121,48 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
       velocityMapping?.output || [0, 5],
       { clamp: false }
     );
+
     const copyRef = useRef<HTMLSpanElement>(null);
     const copyWidth = useElementWidth(copyRef);
+
     function wrap(min: number, max: number, v: number): number {
       const range = max - min;
       const mod = (((v - min) % range) + range) % range;
       return mod + min;
     }
-    const x = useTransform(baseX, v => {
-      if (copyWidth === 0) return '0px';
+
+    const x = useTransform(baseX, (v) => {
+      if (copyWidth === 0) return "0px";
       return `${wrap(-copyWidth, 0, v)}px`;
     });
+
     const directionFactor = useRef<number>(1);
-    useAnimationFrame((t, delta) => {
+    useAnimationFrame((_, delta) => {
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+
       if (velocityFactor.get() < 0) {
         directionFactor.current = -1;
       } else if (velocityFactor.get() > 0) {
         directionFactor.current = 1;
       }
+
       moveBy += directionFactor.current * moveBy * velocityFactor.get();
       baseX.set(baseX.get() + moveBy);
     });
+
     const spans = [];
     for (let i = 0; i < numCopies!; i++) {
       spans.push(
-        <section className={`flex-shrink-0 ${className}`} key={i} ref={i === 0 ? copyRef : null}>
+        <span className={className} key={i} ref={i === 0 ? copyRef : null}>
           {children}
-        </section>
+        </span>
       );
     }
+
     return (
-      <div className={`${parallaxClassName || ''}`} style={parallaxStyle}>
+      <div className={parallaxClassName} style={parallaxStyle}>
         <motion.div
-          className={`${scrollerClassName || 'bridge'} flex whitespace-nowrap text-center font-sans text-4xl font-bold tracking-[-0.02em] drop-shadow md:text-[5rem] md:leading-[5rem]`}
+          className={scrollerClassName}
           style={{ x, ...scrollerStyle }}
         >
           {spans}
@@ -141,6 +170,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
       </div>
     );
   }
+
   return (
     <section>
       {texts.map((text: string, index: number) => (
@@ -164,4 +194,5 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     </section>
   );
 };
+
 export default ScrollVelocity;

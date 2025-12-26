@@ -1,5 +1,4 @@
 import styles from "./SectionFifth.module.css";
-import bridgeImg from "images/SectionFifth/bridge.png";
 import { data } from "./data";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -38,7 +37,12 @@ export const SectionFifth = () => {
                 key={item.id}
                 className={styles.card}
               >
-                <img
+                <motion.img
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: -20,
+                    transition: { duration: 0.3, type: "spring", delay: 0 },
+                  }}
                   draggable={false}
                   src={item.icon}
                   alt={item.alt}
@@ -51,8 +55,8 @@ export const SectionFifth = () => {
           })}
         </div>
       </div>
+
       <ScrollVelocity texts={["0"]} velocity={100} className={styles.bridge} />
-      <div className={styles.bridge}></div>
     </section>
   );
 };

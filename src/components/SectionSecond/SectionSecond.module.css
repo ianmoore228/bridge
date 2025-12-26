@@ -59,6 +59,12 @@
 }
 
 @media screen and (max-width: 650px) {
+    .title {
+     margin-right: 16px;
+    }
+    .wrapper {
+        padding: 0;
+    }
 
     .hyphenation {
         display: none;
@@ -80,21 +86,8 @@
 }
 
 @media screen and (max-width: 410px) {
-    .graphImg {
-        border-radius: 0 0 26px 26px;
-        width: 380px;
-    }
+  
 
-    .contentCard {
-        width: 380px;
-    }
-
-    .bgCard {
-        width: 380px;
-    }
-}
-
-@media screen and (max-width: 380px) {
     .graphImg {
         border-radius: 0 0 26px 26px;
         width: 360px;

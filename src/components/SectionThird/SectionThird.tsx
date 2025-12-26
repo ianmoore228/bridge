@@ -3,9 +3,13 @@ import iphoneImg from "images/sectionThird/iphone.png";
 import { data } from "./data";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export const SectionThird = () => {
   const ref = useRef(null);
+  const isMobile = useMediaQuery({
+    query: "(max-width: 1224px)",
+  });
 
   const isInView = useInView(ref, { once: true, margin: "0px 0px -45% 0px" });
 
@@ -71,25 +75,40 @@ export const SectionThird = () => {
           </div>
         </div>
         <div className={styles.containerRight}>
-          <motion.img
-            drag
-            dragConstraints={{
-              top: -50,
-              left: -50,
-              right: 50,
-              bottom: 50,
-            }}
-            initial={{ x: 80, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : {}}
-            transition={{
-              duration: 0.6,
-              type: "spring",
-              stiffness: 100,
-              delay: 0.2,
-            }}
-            src={iphoneImg}
-            className={styles.iphoneImg}
-          />
+          {isMobile ? (
+            <motion.img
+              initial={{ x: 80, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : {}}
+              transition={{
+                duration: 0.6,
+                type: "spring",
+                stiffness: 100,
+                delay: 0.2,
+              }}
+              src={iphoneImg}
+              className={styles.iphoneImg}
+            />
+          ) : (
+            <motion.img
+              drag
+              dragConstraints={{
+                top: -50,
+                left: -50,
+                right: 50,
+                bottom: 50,
+              }}
+              initial={{ x: 80, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : {}}
+              transition={{
+                duration: 0.6,
+                type: "spring",
+                stiffness: 100,
+                delay: 0.2,
+              }}
+              src={iphoneImg}
+              className={styles.iphoneImg}
+            />
+          )}
         </div>
       </div>
     </section>

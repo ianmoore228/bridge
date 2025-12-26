@@ -7,6 +7,8 @@
     text-align: right;
     align-self: end;
     margin: 187px 0 193px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .wrapper {

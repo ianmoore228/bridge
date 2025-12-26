@@ -4,8 +4,11 @@
 }
 
 .bridge {
-    background-image: url(/src/assets/images/Footer/bridge.png);
-    height: 250px;
+    background-image: url(/src/assets/images/Footer/bridge2.png);
+    height: 268px;
+    background-size: auto 100%;
+    width: 356px;
+    color: rgba(245, 222, 179, 0);
 }
 
 .imgPeople {
@@ -25,7 +28,24 @@
     font-size: 92px;
 }
 
+.textContainer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 50px;
+}
+
+.titleContainer {
+display: flex;
+flex-direction: column;
+
+}
+
 @media screen and (max-width: 1250px) {
+
+    .title {
+        margin-top: -50px;
+    }
     .imgPeople {
         max-width: 350px;
     }
@@ -53,11 +73,12 @@
 
     .title {
         font-size: 19px;
+        margin-top: 0;
     }
 
     .bridge {
         height: 150px;
-        background-size: cover
+        width: 199px;
     }
 }
 
